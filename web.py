@@ -12,12 +12,12 @@ st.set_page_config(page_title='Prediction of Disease Outbreaks',
 
 
 
-working_dir = r"C:\Users\soura\Desktop\project"
+working_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Load models using os.path.join to avoid issues
-diabetes_model = pickle.load(open(os.path.join(working_dir, "training_models", "diabetes_model.sav"), "rb"))
-heart_model = pickle.load(open(os.path.join(working_dir, "training_models", "heart_model.sav"), "rb"))
-park_model = pickle.load(open(os.path.join(working_dir, "training_models", "park_model.sav"), "rb"))
+diabetes_model = pickle.load(open(f'{working_dir}/training_models/diabetes_model.sav', 'rb'))
+heart_model = pickle.load(open(f'{working_dir}/training_models/heart_model.sav', 'rb'))
+park_model = pickle.load(open(f'{working_dir}/training_models/park_model.sav', 'rb'))
 
 # Sidebar menu
 with st.sidebar:
